@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Галерея из 5 изображений с описаниями</title>
+  <style>
+    :root {
+      --gap: 24px;
+      --card-radius: 12px;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: var(--gap);
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: var(--card-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .thumb {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+      background: #ddd;
+    }
+
+    .card-content {
+      padding: 14px 16px 18px;
+    }
+
+    .title {
+      font-size: 1.05rem;
+      margin: 0 0 8px 0;
+    }
+
+    .desc {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 600px) {
+      .thumb { height: 150px; }
+      header h1 { font-size: 1.4rem; }
+    }
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Legends of UK</h1>
+  </header>
+
+  <main>
+    <section class="grid" aria-label="Галерея изображений с описанием">
+      <!-- 1 -->
+      <article class="card">
+        <img class="thumb" src="Arthur.jpg" alt="Описание изображения 1">
+        <div class="card-content">
+          <h2 class="title">King Arthur</h2>
+          <p class="desc">The Legend of King Arthur and Merlin.
+          One of the most famous British legends tells of King Arthur, who, according to legend, united Britain and defended it from its enemies. He became king by pulling a sword from a stone—a symbol of his destiny. The wise wizard Merlin was always at his side, offering advice and magic. And in the legendary fortress of Camelot, the Knights of the Round Table gathered to uphold justice.</p>
+        </div>
+      </article>
+
+      <!-- 2 -->
+      <article class="card">
+        <img class="thumb" src="lochness.jpg" alt="Описание изображения 2">
+        <div class="card-content">
+          <h2 class="title">Loch Ness Monster</h2>
+          <p class="desc">The Legend of the Loch Ness Monster.
+          According to legend, a huge, mysterious creature resembling an ancient lizard with a long neck lives in the deep Loch Ness of Scotland. The first mentions of the monster appeared as early as the sixth century. Since then, many have claimed to have seen a silhouette or dark shadow in the water. Some consider this a myth, others believe it is proof of the existence of ancient animals that have survived to this day.</p>
+        </div>
+      </article>
+
+      <!-- 3 -->
+      <article class="card">
+        <img class="thumb" src="robin.jpg" alt="Описание изображения 3">
+        <div class="card-content">
+          <h2 class="title">Robin Hood</h2>
+          <p class="desc">The Legend of Robin Hood.
+          Robin Hood is a legendary noble outlaw who lived in Sherwood Forest in England. According to legend, he and his loyal friends robbed the rich and helped the poor. His main enemy was the Sheriff of Nottingham, and his companion was the beautiful Lady Marian. Robin Hood became a symbol of justice and the fight against unjust authority.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

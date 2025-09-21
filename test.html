@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Проект по инглишу</title>
+  <style>
+    :root {
+      --bg: #f5f5f5;
+      --text: #1a1a1a;
+      --link: #1a73e8;
+      --link-hover: #0b57d0;
+      --nav-height: 60px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      line-height: 1.4;
+    }
+
+    /* Контейнер для всей страницы */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr minmax(auto, 800px) 1fr;
+      gap: 0;
+      min-height: 100vh;
+    }
+
+    /* Блоки навигации слева, по центру и справа */
+    .nav {
+      display: flex;
+      align-items: center;
+      height: var(--nav-height);
+      padding: 0 12px;
+    }
+
+    /* Слева и справа — фиксированная ширина, чтобы центр остался по центру */
+    .nav-left, .nav-right {
+      justify-content: flex-start;
+    }
+
+    .nav-center {
+      justify-content: center;
+    }
+
+    /* Простой стиль ссылок */
+    .nav a {
+      color: var(--link);
+      text-decoration: none;
+      margin: 0 8px;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .nav a:hover,
+    .nav a:focus {
+      color: #fff;
+      background: var(--link-hover);
+      outline: none;
+    }
+
+    /* Центральная область контента под навигацией */
+    main {
+      grid-column: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px;
+    }
+
+    .hero-text {
+      text-align: center;
+      max-width: 720px;
+    }
+
+    .hero-text h1 {
+      margin: 8px 0 12px;
+      font-size: 2rem;
+    }
+
+    .hero-text p {
+      margin: 0 0 16px;
+      color: #555;
+    }
+
+    .hero-image {
+      margin-top: 16px;
+    }
+
+    .hero-image img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+    /* Ширина сетки на больших экранах — центрируем контент по середине страницы */
+    @media (min-width: 980px) {
+      .container {
+        grid-template-columns: 1fr minmax(720px, 800px) 1fr;
+      }
+    }
+
+    /* Адаптив: на маленьких экранах скрываем левую и правую навигацию и показываем только центр */
+    @media (max-width: 700px) {
+      .grid-wrap {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+      .nav-left,
+      .nav-right {
+        display: none;
+      }
+      main {
+        grid-column: 1;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container grid-wrap">
+    <!-- Левая навигация -->
+    <nav class="nav nav-left" aria-label="Навигация слева">
+      <a href="Project.html">Проект по Английскому</a>
+ 
+
+    </nav>
+
+    <!-- Центр навигации -->
+    <nav class="nav nav-center" aria-label="Навигация по центру">
+      <a href="About.html">About</a>
+      <a href="Country.html">Country</a>
+      <a href="Mustsee.html">Must-see places</a>
+      <a href="legends.html">Legends</a>
+    </nav>
+
+    <!-- Основной контент по центру нижнего блока -->
+    <main>
+      <div class="hero-text">
+        <h1>Web-site about United Kingdom</h1>
+        <p>This site is made specifically for the English language project.</p>
+      </div>
+
+      <div class="hero-image" aria-label="Изображение под текстом">
+        <img src="1gerb.png" alt="Случайная иллюстрация" />
+      </div>
+    </main>
+  </div>
+</body>
+</html>
