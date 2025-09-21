@@ -1,0 +1,147 @@
+:root{
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --text: #1e1e1e;
+  --muted: #6b7280;
+  --primary: #4f46e5;
+  --shadow: 0 6px 20px rgba(0,0,0,.08);
+  --container: 1100px;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; color: var(--text); background: var(--bg); font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial; }
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.site-header {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 700;
+}
+.logo-mark {
+  font-size: 20px;
+  color: var(--primary);
+}
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+.main-nav a {
+  text-decoration: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 6px;
+}
+.main-nav a:hover {
+  background: #f2f4f7;
+}
+
+.main-content {
+  padding: 40px 0 60px;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 28px;
+}
+.section-title h1 {
+  font-size: 2.25rem;
+  margin: 0 0 8px;
+}
+.subtitle {
+  color: var(--muted);
+  margin: 0;
+}
+
+.authors-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.author-card {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+}
+.author-media img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+.author-info {
+  padding: 14px 14px 16px;
+}
+.author-name {
+  margin: 0 0 6px;
+  font-size: 1.1rem;
+}
+.author-role {
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.author-desc {
+  color: #333;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 12px;
+}
+.author-link {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 6px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.author-link:hover {
+  background: #4338ca;
+}
+
+/* адаптивность */
+@media (max-width: 1024px) {
+  .authors-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 768px) {
+  .header-inner { height: 56px; }
+  .author-media img { height: 150px; }
+  .authors-grid { grid-template-columns: 1fr; }
+}
+.site-footer {
+  background: #111;
+  color: #ddd;
+  padding: 24px 0;
+}
+.footer-inner { text-align: center; padding: 0 16px; }
+@media (max-width: 600px) {
+  .section-title h1 { font-size: 1.8rem; }
+}

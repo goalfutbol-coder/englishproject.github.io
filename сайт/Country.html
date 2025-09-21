@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Страница о стране</title>
+  <style>
+    :root {
+      --gap: 24px;
+      --card-radius: 12px;
+      --bg: #f5f5f7;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --shadow: 0 6px 20px rgba(0,0,0,.08);
+    }
+
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background: #ffffff;
+      box-shadow: 0 2px 6px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 28px auto;
+      padding: 0 16px;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .flag-wrap, .emblem-wrap {
+      text-align: center;
+    }
+
+    .flag-wrap img, .emblem-wrap img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+      display: inline-block;
+    }
+
+    .flag-caption, .emblem-caption {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    .content {
+      padding: 6px 0;
+    }
+
+    h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: var(--primary);
+    }
+
+    p {
+      line-height: 1.6;
+      margin: 0 0 12px;
+    }
+
+    /* Адаптивность */
+    @media (max-width: 900px) {
+      .card { grid-template-columns: 1fr; }
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 10px;
+      color: #666;
+      font-size: .92rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Country</h1>
+    <p>Flag, Emblem, History</p>
+  </header>
+
+  <main>
+    <section class="card" aria-label="Флаг, герб и текст">
+      <div class="flag-wrap">
+        <img src="flag.png" alt="Флаг страны" width="600" height="400" />
+        <div class="flag-caption">Flag of the UK — The UK flag is a mixture of the Northern Irish, Scottish and English flags.</div>
+      </div>
+
+      <div class="content">
+        <h2>State emblem</h2>
+        <div class="emblem-wrap" style="margin-bottom:12px;">
+          <img src="1gerb.png" alt="Герб страны" width="320" height="320" />
+        </div>
+        <p>
+          The inscription on the state emblem of the UK reads: God and my right. 
+        </p>
+        <p>
+           The history of the United Kingdom begins with the formation of the Kingdom of Great Britain in 1707 following the unification of England and Scotland. In 1801, it became the United Kingdom of Great Britain and Ireland following the union with Ireland. In 1922, following the War of Independence, six regions of Northern Ireland remained within the UK, leading to the country's renaming in 1927 to the United Kingdom of Great Britain and Northern Ireland.
+        </p>
+      </div>
+    </section>
+  </main>
+  <footer>
+    © 2025 Volchok Company. Все права не защищены.
+  </footer>
+</body>
+</html>
